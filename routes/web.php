@@ -9,8 +9,20 @@
 | by your application. Just tell Laravel the URIs it should respond
 | to using a Closure or controller method. Build something great!
 |
-*/
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+*/
+
+Auth::routes();
+
+Route::get('/', 'Auth\LoginController@index');
+Route::get('/home', 'Auth\LoginController@index');
+Route::get('/login', 'Auth\LoginController@index');
+Route::get('/dashboard', 'DashboardController@index'); 
+Route::get('/logoutuser', 'Auth\LogoutController@index'); 
+Route::get('/opdrachten', 'OpdrachtenController@index');
+
+Auth::routes();
