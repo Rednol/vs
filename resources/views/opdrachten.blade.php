@@ -28,33 +28,37 @@
          <div class="panel panel-default col-md-3">
             <div class="panel-heading">Leereenheden</div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 1</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 2</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 3</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 4</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 5</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 6</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 1</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 2</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 3</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 4</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 5</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 6</div>
                 </div>
             </div>
 
             <div class="panel panel-default col-md-3">
             <div class="panel-heading">Opdrachten</div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Lopende Opdrachten</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Afgeronde Opdrachten</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Opdracht 1</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Opdracht 2</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Opdracht 3</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Opdracht 4</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Lopende Opdrachten</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Afgeronde Opdrachten</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 1</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 2</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 3</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 4</div>
                 </div>
             </div>
 
             <div class="panel panel-default col-md-3">
             <div class="panel-heading">Opdracht</div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Opdracht 1</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Opdracht omschrijving 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis</div>
+                    <div class="col-md-12 well clickable" style="margin-top: 5px;">
+                    <h4>Opdracht Titel</h1> 
+                    <br>
+                    <h5>Type Opdracht: Individueel</h5>
+                    <br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend
+</div>
                 </div>
             </div>
     </div>
