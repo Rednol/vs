@@ -2,6 +2,16 @@
 <link rel="stylesheet" href="css/app.css" type="text/css" media="screen"/>  
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 @section('content')
+
+<!-- Opdracht and Leereenheid models containing tables with opdracht information and leereenheden-->
+<?php
+use App\Opdracht;
+use App\Leereenheid;
+
+$opdrachten = App\Opdracht::all();
+$leereenheden= App\Leereenheid::all();
+?>
+
 <div class="container">
     <div class="row">
     
@@ -19,46 +29,71 @@
             </ul>
         </div>
 
-    <!-- Welkomstbericht & Progressiebalk -->
+    <!-- Pagina titel -->
         <div class="panel panel-default col-md-9">
             <div class="panel-body" style=";">Opdrachten</div>
         </div>
 
-    <!--Lopende Opdrachten  -->
+    <!--Leereenheden -->
          <div class="panel panel-default col-md-3">
             <div class="panel-heading">Leereenheden</div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 1</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 2</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 3</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 4</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 5</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Leereenheid 6</div>
+                       <?php
+                        foreach ($leereenheden as $Leereenheid) {
+                            echo "<div class='col-md-12 well clickable'>";
+                            echo $Leereenheid->naam;
+                            echo "</div>"; }
+                        ?>
                 </div>
             </div>
+            
 
+            <!-- Opdrachten -->
             <div class="panel panel-default col-md-3">
             <div class="panel-heading">Opdrachten</div>
-                <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Lopende Opdrachten</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Afgeronde Opdrachten</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 1</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 2</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 3</div>
-                    <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;">Opdracht 4</div>
-                </div>
+                <div class="panel-body" style="padding: 1px;">                       
+                        <?php
+                        foreach ($opdrachten as $opdracht) {
+                            echo "<div class='col-md-12 well clickable'>";
+                            echo $opdracht->titel;
+                            echo "</div>"; }
+                        ?>
+                    </div>
             </div>
 
+            <!-- Geselecteerde Opdracht -->
             <div class="panel panel-default col-md-3">
-            <div class="panel-heading">Opdracht</div>
+            <div class="panel-heading"><?php foreach ($opdrachten as $opdracht) {
+                        echo $opdracht->titel; } ?></div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin-top: 5px;">
-                    <h4>Opdracht Titel</h1> 
-                    <br>
-                    <h5>Type Opdracht: Individueel</h5>
-                    <br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend
+                                <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"> 
+            
+
+                         Type: 
+                   <?php echo $opdracht->type; ?> <br> <br>
+
+                         Status: 
+                   <?php echo $opdracht->status; ?> <br> <br>
+
+                   <?php echo $opdracht->beschrijving; ?>
+
 </div>
+
+                </div>
+            </div> 
+
+        <!-- Opdracht toevoegen -->
+        <div class="panel panel-default col-md-3">
+            <div class="panel-heading">Opdracht toevoegen</div>
+                <div class="panel-body" style="padding: 1px;">
+                    <div class="col-md-12 well" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"><form action="event.preventDefault();
+                                                 document.getElementById('opdracht-toevoegen').submit();" method="post">     
+Titel: <br> <input type="text" name="field1" style="width: 100%";/> <br>
+Beschrijving: <br> <input type="text" name="field2" style="width: 100%";/> <br>
+Type: <br> <input type="text" name="field3" style="width: 100%";/> <br>
+Leereenheden: <br> <input type="text" name="field4" style="width: 100%";/> <br>
+Deadline: <br> <input type="text" name="field5" style="width: 100%";/> <br> <br>
+<input type="Submit" style="width: 100%";/></form></div>
                 </div>
             </div>
     </div>
