@@ -40,7 +40,7 @@ $leereenheden= App\Leereenheid::all();
                 <div class="panel-body" style="padding: 1px;">
                        <?php
                         foreach ($leereenheden as $Leereenheid) {
-                            echo "<div class='col-md-12 well clickable'>";
+                            echo "<div class='col-md-12 well clickable customdiv'>";
                             echo $Leereenheid->naam;
                             echo "</div>"; }
                         ?>
@@ -54,7 +54,7 @@ $leereenheden= App\Leereenheid::all();
                 <div class="panel-body" style="padding: 1px;">                       
                         <?php
                         foreach ($opdrachten as $opdracht) {
-                            echo "<div class='col-md-12 well clickable'>";
+                            echo "<div class='col-md-12 well clickable customdiv'>";
                             echo $opdracht->titel;
                             echo "</div>"; }
                         ?>
@@ -66,7 +66,7 @@ $leereenheden= App\Leereenheid::all();
             <div class="panel-heading"><?php foreach ($opdrachten as $opdracht) {
                         echo $opdracht->titel; } ?></div>
                 <div class="panel-body" style="padding: 1px;">
-                                <div class="col-md-12 well clickable" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"> 
+                                <div class="col-md-12 well clickable customdiv" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"> 
             
 
                          Type: 
