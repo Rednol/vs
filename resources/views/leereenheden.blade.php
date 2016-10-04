@@ -28,12 +28,36 @@
          <div class="panel panel-default col-md-3">
             <div class="panel-heading">Leereenheden</div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 1</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 2</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 3</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 4</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 5</div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">Leereenheid 6</div>
+                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
+                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 1</a><div class="box">
+                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
+                    </div> 
+                    </div>
+                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
+                        <a href="/vs/resources/assets/leereenheid2.pdf">Leereenheid 2</a><div class="box">
+                        <iframe src="/vs/resources/assets/leereenheid2.pdf" width = "500px" height = "500px"></iframe>
+                    </div> 
+                    </div>
+                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
+                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 3</a><div class="box">
+                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
+                    </div> 
+                    </div>
+                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
+                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 4</a><div class="box">
+                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
+                    </div> 
+                    </div>
+                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
+                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 5</a><div class="box">
+                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
+                    </div> 
+                    </div>
+                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
+                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 6</a><div class="box">
+                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
+                    </div> 
+                    </div>
                 </div>
             </div>
 
@@ -47,9 +71,25 @@
          <div class="panel panel-default col-md-3">
             <div class="panel-heading">Preview</div>
                 <div class="panel-body" style="padding: 1px;"></div>
+                 
                     <img src="http://i67.tinypic.com/343hnon.jpg" width="260px" height="300px">
+                   
         </div>
     </div>
 </div>
+<style type="text/css">
 
+
+.box{
+    display: none;
+    width: 100%;
+}
+
+a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+
+</style>
 @endsection
