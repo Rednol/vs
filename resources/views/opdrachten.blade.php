@@ -40,8 +40,11 @@ $leereenheden= App\Leereenheid::all();
                 <div class="panel-body" style="padding: 1px;">
                        <?php
                         foreach ($leereenheden as $Leereenheid) {
+                            /* Div om elke database entry heen */
                             echo "<div class='col-md-12 well clickable customdiv'>";
+                            /* Toon alle leereenheden */
                             echo $Leereenheid->naam;
+                            /* Sluit div */
                             echo "</div>"; }
                         ?>
                 </div>
@@ -54,8 +57,11 @@ $leereenheden= App\Leereenheid::all();
                 <div class="panel-body" style="padding: 1px;">                       
                         <?php
                         foreach ($opdrachten as $opdracht) {
+                            /* Div om elke database entry heen */
                             echo "<div class='col-md-12 well clickable customdiv'>";
+                            /* Toon alle opdracht titels */
                             echo $opdracht->titel;
+                            /* Sluit div */
                             echo "</div>"; }
                         ?>
                     </div>
@@ -66,36 +72,36 @@ $leereenheden= App\Leereenheid::all();
             <div class="panel-heading"><?php foreach ($opdrachten as $opdracht) {
                         echo $opdracht->titel; } ?></div>
                 <div class="panel-body" style="padding: 1px;">
-                                <div class="col-md-12 well clickable customdiv" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"> 
-            
-
-                         Type: 
+                        <!-- Div om opdracht type, status en beschrijving heen -->
+                        <div class="col-md-12 well customdiv" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"> 
+                        <!-- Toon opdracht type -->
+                        Type: 
                    <?php echo $opdracht->type; ?> <br> <br>
-
-                         Status: 
+                        <!-- Toon opdracht status -->
+                        Status: 
                    <?php echo $opdracht->status; ?> <br> <br>
 
+                        <!-- Toon opdracht beschrijving -->
                    <?php echo $opdracht->beschrijving; ?>
-
-</div>
-
+                    </div>
                 </div>
             </div> 
 
         <!-- Opdracht toevoegen -->
-        <div class="panel panel-default col-md-3">
+        <div class="panel panel-default col-md-3" style="clear: left;">
             <div class="panel-heading">Opdracht toevoegen</div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"><form action="event.preventDefault();
-                                                 document.getElementById('opdracht-toevoegen').submit();" method="post">     
-Titel: <br> <input type="text" name="field1" style="width: 100%";/> <br>
-Beschrijving: <br> <input type="text" name="field2" style="width: 100%";/> <br>
-Type: <br> <input type="text" name="field3" style="width: 100%";/> <br>
-Leereenheden: <br> <input type="text" name="field4" style="width: 100%";/> <br>
-Deadline: <br> <input type="text" name="field5" style="width: 100%";/> <br> <br>
-<input type="Submit" style="width: 100%";/></form></div>
+                    <div class="col-md-12 well" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"><form action="opdrachten/toevoegen" method="post">
+                    <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+
+                    Titel: <br> <input type="text" name="opdracht_titel" style="width: 100%";/> <br>
+                    Beschrijving: <br> <input type="text" name="opdracht_type" style="width: 100%";/> <br>
+                    Type: <br> <input type="text" name="opdracht_beschrijving" style="width: 100%";/> <br>
+                    Leereenheden: <br> <input type="text" name="opdracht_leereenheden" style="width: 100%";/> <br>
+                    <input type="Submit" value = "Opdracht Toevoegen" style="width: 100%";/></form></div>
                 </div>
             </div>
+            
     </div>
 </div>
 

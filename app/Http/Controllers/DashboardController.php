@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -17,15 +15,7 @@ class DashboardController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth');
-
-        if (Auth::check()) {
-        // The user is logged in...
-            return view('dashboard');
-        }
-        else {
-            return view('auth\login');
-        }
+        return view('dashboard');
     }
 
     /**

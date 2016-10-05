@@ -16,13 +16,13 @@ Route::get('/', function () {
 
 */
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/', 'Auth\LoginController@index');
-Route::get('/home', 'Auth\LoginController@index');
-Route::get('/login', 'Auth\LoginController@index');
+Route::get('/', 'DashboardController@index');
+//Route::get('/login', 'Auth\LoginController@index');
 Route::get('/dashboard', 'DashboardController@index'); 
-Route::get('/logoutuser', 'Auth\LogoutController@index'); 
+//Route::get('/logoutuser', 'Auth\LogoutController@index'); 
 Route::get('/opdrachten', 'OpdrachtenController@index');
+Route::get('/opdracht-toevoegen','OpdrachtToevoegenController@insertform');
+Route::post('/opdrachten/toevoegen','OpdrachtToevoegenController@insert');
 
-Auth::routes();
