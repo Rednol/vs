@@ -1,4 +1,10 @@
 @extends('layouts.app')
+<?php
+use App\Leereenheid;
+
+$leereenheden = App\Leereenheid::all();
+
+?>
 <link rel="stylesheet" href="css/app.css" type="text/css" media="screen"/>  
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 @section('content')
@@ -28,36 +34,19 @@
          <div class="panel panel-default col-md-3">
             <div class="panel-heading">Leereenheden</div>
                 <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
-                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 1</a><div class="box">
-                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
-                    </div> 
-                    </div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
-                        <a href="/vs/resources/assets/leereenheid2.pdf">Leereenheid 2</a><div class="box">
-                        <iframe src="/vs/resources/assets/leereenheid2.pdf" width = "500px" height = "500px"></iframe>
-                    </div> 
-                    </div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
-                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 3</a><div class="box">
-                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
-                    </div> 
-                    </div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
-                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 4</a><div class="box">
-                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
-                    </div> 
-                    </div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
-                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 5</a><div class="box">
-                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
-                    </div> 
-                    </div>
-                    <div class="col-md-12 well clickable" style="margin: 5px; padding: 10px;">
-                        <a href="/vs/resources/assets/leereenheid1.pdf">Leereenheid 6</a><div class="box">
-                        <iframe src="/vs/resources/assets/leereenheid1.pdf" width = "500px" height = "500px"></iframe>
-                    </div> 
-                    </div>
+                      <?php
+                        foreach ($leereenheden as $leereenheid) {
+                        
+                            echo "<div class='col-md-12 well clickable'>";
+                            
+                            echo "<a href='/vs/resources/assets/$leereenheid->Naam.pdf'>$leereenheid->Naam</a>";
+                            echo "<div class='box'>";
+                            echo "<iframe src='/vs/resources/assets/$leereenheid->Naam.pdf' width = '500px' height = '500px'></iframe>";
+                            echo "</div> ";
+                            
+                            echo "</div>"; }
+                        ?>
+                    
                 </div>
             </div>
 
@@ -77,19 +66,7 @@
         </div>
     </div>
 </div>
-<style type="text/css">
 
 
-.box{
-    display: none;
-    width: 100%;
-}
 
-a:hover + .box,.box:hover{
-    display: block;
-    position: relative;
-    z-index: 100;
-}
-
-</style>
 @endsection
