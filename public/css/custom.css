@@ -1,0 +1,28 @@
+
+
+
+  .img-thumbnail, body {
+      background-color: #999;
+  }
+  .btn-primary {
+      color: #d9edf7;
+      background-color: #555;
+      border-color: #d3e0e9;
+  }
+
+  .btn-link {
+      color: #333;
+      font-weight: 400;
+      border-radius: 0;
+  }
+
+  img {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+  }
+
+  .panel-body {
+      padding: 30px;
+  }
+
