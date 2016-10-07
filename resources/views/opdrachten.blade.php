@@ -31,7 +31,7 @@ $leereenheden= App\Leereenheid::all();
 
     <!-- Pagina titel -->
         <div class="panel panel-default col-md-9">
-            <div class="panel-body" style=";">Opdrachten</div>
+            <div class="panel-body">Opdrachten</div>
         </div>
 
     <!--Leereenheden -->
@@ -50,7 +50,6 @@ $leereenheden= App\Leereenheid::all();
                 </div>
             </div>
             
-
             <!-- Opdrachten -->
             <div class="panel panel-default col-md-3">
             <div class="panel-heading">Opdrachten</div>
@@ -61,6 +60,7 @@ $leereenheden= App\Leereenheid::all();
                             echo "<div class='col-md-12 well clickable customdiv'>";
                             /* Toon alle opdracht titels */
                             echo $opdracht->titel;
+                            echo "<a href='http://www.w3schools.com'>$opdracht->titel</a>";
                             /* Sluit div */
                             echo "</div>"; }
                         ?>
@@ -97,11 +97,21 @@ $leereenheden= App\Leereenheid::all();
                     Titel: <br> <input type="text" name="opdracht_titel" style="width: 100%";/> <br>
                     Beschrijving: <br> <input type="text" name="opdracht_type" style="width: 100%";/> <br>
                     Type: <br> <input type="text" name="opdracht_beschrijving" style="width: 100%";/> <br>
-                    Leereenheden: <br> <input type="text" name="opdracht_leereenheden" style="width: 100%";/> <br>
-                    <input type="Submit" value = "Opdracht Toevoegen" style="width: 100%";/></form></div>
+                    Leereenheden: 
+                    <select style="width: 100%"> 
+                        <?php
+                        foreach ($leereenheden as $Leereenheid) {
+                            /* Toon alle leereenheden */
+                            echo "<option name='opdracht_leereenheden'>";
+                            echo $Leereenheid->naam;
+                            echo "</option>";
+                        } ?>
+                    </select>
+
+                    <input type="Submit" value = "Opdracht Toevoegen" style="width: 100%; margin-top: 15px;";/></form></div>
                 </div>
             </div>
-            
+
     </div>
 </div>
 

@@ -21,7 +21,7 @@
 
     <!-- Welkomstbericht & Progressiebalk -->
         <div class="panel panel-default col-md-6">
-            <div class="panel-body" style="float: left; margin-right: 50px;">Welkom, {{ Auth::user()->name }} </div>
+            <div class="panel-body" style="float: left; margin-right: 50px;">Welkom </div>
 
             <div class="progress progress-striped progress-success active" style="margin-top: 15px; margin-bottom: 0;">
                 <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>

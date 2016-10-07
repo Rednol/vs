@@ -23,6 +23,5 @@ Route::get('/', 'DashboardController@index');
 Route::get('/dashboard', 'DashboardController@index'); 
 //Route::get('/logoutuser', 'Auth\LogoutController@index'); 
 Route::get('/opdrachten', 'OpdrachtenController@index');
-Route::get('/opdracht-toevoegen','OpdrachtToevoegenController@insertform');
-Route::post('/opdrachten/toevoegen','OpdrachtToevoegenController@insert');
+Route::post('/opdrachten/toevoegen','OpdrachtenController@insert');
 
