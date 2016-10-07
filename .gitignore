@@ -5,3 +5,6 @@
 Homestead.json
 Homestead.yaml
 .env
+resources/views/layouts/app.blade.php
+resources/views/leereenheden.blade.php
+resources/views/leereenheden.blade.php

@@ -41,7 +41,8 @@ $leereenheden = App\Leereenheid::all();
                             
                             echo "<a href='/vs/resources/assets/$leereenheid->Naam.pdf'>$leereenheid->Naam</a>";
                             echo "<div class='box'>";
-                            echo "<iframe src='/vs/resources/assets/$leereenheid->Naam.pdf' width = '500px' height = '500px'></iframe>";
+                            echo "<object width='500' height='500' data='/vs/resources/assets/$leereenheid->Naam.pdf'></object>";
+
                             echo "</div> ";
                             
                             echo "</div>"; }
