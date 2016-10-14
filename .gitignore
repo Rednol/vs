@@ -5,3 +5,6 @@
 Homestead.json
 Homestead.yaml
 .env
+app/Http/Controllers/DashboardController.php
+app/Http/Controllers/DashboardController.php
+app/Http/Controllers/DashboardController.php

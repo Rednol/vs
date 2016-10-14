@@ -16,12 +16,8 @@ Route::get('/', function () {
 
 */
 
-//Auth::routes();
-
 Route::get('/', 'DashboardController@index');
-//Route::get('/login', 'Auth\LoginController@index');
 Route::get('/dashboard', 'DashboardController@index'); 
-//Route::get('/logoutuser', 'Auth\LogoutController@index'); 
 Route::get('/opdrachten', 'OpdrachtenController@index');
 Route::post('/opdrachten/toevoegen','OpdrachtenController@insert');
 

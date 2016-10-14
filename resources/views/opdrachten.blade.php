@@ -1,6 +1,7 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="css/app.css" type="text/css" media="screen"/>  
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"> 
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
 @section('content')
 
 <!-- Opdracht and Leereenheid models containing tables with opdracht information and leereenheden-->
@@ -13,9 +14,8 @@ $leereenheden= App\Leereenheid::all();
 ?>
 
 <div class="container">
-    <div class="row">
     
-  <!-- Menu -->
+        <!-- Menu -->
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
                 <li><a href="{{ url('/dashboard') }}"><i class="fa fa-home fa-fw"></i>Home</a></li>
@@ -29,90 +29,176 @@ $leereenheden= App\Leereenheid::all();
             </ul>
         </div>
 
-    <!-- Pagina titel -->
+        <!-- Pagina titel -->
         <div class="panel panel-default col-md-9">
-            <div class="panel-body">Opdrachten</div>
+        <!-- Pagina titel -->
+            <div class="panel-body" style="float:left;">Opdrachten </div>
+            <!-- Opdracht toevoegen knop -->
+            <a href="#" class="btn btn-primary btn-primary" id="myBtn" style="float: right; margin-top: 8px;">Opdracht Toevoegen <span class="glyphicon glyphicon-plus"></span></a>
         </div>
 
-    <!--Leereenheden -->
-         <div class="panel panel-default col-md-3">
+        <!--Leereenheden -->
+        <div class="panel panel-default col-md-3">
             <div class="panel-heading">Leereenheden</div>
                 <div class="panel-body" style="padding: 1px;">
-                       <?php
+                    <?php
                         foreach ($leereenheden as $Leereenheid) {
-                            /* Div om elke database entry heen */
                             echo "<div class='col-md-12 well clickable customdiv'>";
-                            /* Toon alle leereenheden */
                             echo $Leereenheid->naam;
-                            /* Sluit div */
                             echo "</div>"; }
-                        ?>
+                    ?>
                 </div>
-            </div>
+        </div>
             
-            <!-- Opdrachten -->
-            <div class="panel panel-default col-md-3">
+        <!-- Opdrachten -->
+        <div class="panel panel-default col-md-3">
             <div class="panel-heading">Opdrachten</div>
                 <div class="panel-body" style="padding: 1px;">                       
-                        <?php
+                    <?php
                         foreach ($opdrachten as $opdracht) {
-                            /* Div om elke database entry heen */
                             echo "<div class='col-md-12 well clickable customdiv'>";
-                            /* Toon alle opdracht titels */
                             echo $opdracht->titel;
-                            echo "<a href='http://www.w3schools.com'>$opdracht->titel</a>";
+                            //echo "<a href='http://www.w3schools.com'>$opdracht->titel</a>";
                             /* Sluit div */
                             echo "</div>"; }
-                        ?>
-                    </div>
+                    ?>
+                </div>
+        </div>
+
+        <!-- Geselecteerde Opdracht -->
+        <div class="panel panel-default col-md-3">
+            <div class="panel-heading">
+            <!-- Zet opdracht titel als panel heading -->
+                <?php 
+                    foreach ($opdrachten as $opdracht) {
+                        echo $opdracht->titel; } 
+                ?>   
             </div>
 
-            <!-- Geselecteerde Opdracht -->
-            <div class="panel panel-default col-md-3">
-            <div class="panel-heading"><?php foreach ($opdrachten as $opdracht) {
-                        echo $opdracht->titel; } ?></div>
-                <div class="panel-body" style="padding: 1px;">
-                        <!-- Div om opdracht type, status en beschrijving heen -->
-                        <div class="col-md-12 well customdiv" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"> 
-                        <!-- Toon opdracht type -->
-                        Type: 
-                   <?php echo $opdracht->type; ?> <br> <br>
-                        <!-- Toon opdracht status -->
-                        Status: 
-                   <?php echo $opdracht->status; ?> <br> <br>
+            <!-- Opdracht type, status en beschrijving -->
+            <div class="panel-body" style="padding: 1px;">
+                <div class="col-md-12 well customdiv" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"> 
+                    <label>Type:</label> 
+                   <?php echo $opdracht->type; ?>
+                   <hr> 
+                   <label>Beschrijving:</label> <br>
+                   <?php echo $opdracht->beschrijving; ?> 
+                   <hr> 
+                   <label>Leereenheden:</label>
+                   <?php echo $opdracht->leereenheden; ?>
+                   <hr> 
+                   <label>Status:</label>
+                   <?php echo $opdracht->status; ?> 
+                   <hr> 
+                    <label>Individueel of groep:</label>
+                   <?php echo $opdracht->individueelofgroepsopdracht; ?> 
+                   <hr>
+                   <label>Deadline:</label>
+                   <?php echo $opdracht->deadline; ?>
 
-                        <!-- Toon opdracht beschrijving -->
-                   <?php echo $opdracht->beschrijving; ?>
-                    </div>
-                </div>
-            </div> 
-
-        <!-- Opdracht toevoegen -->
-        <div class="panel panel-default col-md-3" style="clear: left;">
-            <div class="panel-heading">Opdracht toevoegen</div>
-                <div class="panel-body" style="padding: 1px;">
-                    <div class="col-md-12 well" style="margin-top: 5px; margin-bottom: 5px; padding: 10px;"><form action="opdrachten/toevoegen" method="post">
-                    <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-
-                    Titel: <br> <input type="text" name="opdracht_titel" style="width: 100%";/> <br>
-                    Beschrijving: <br> <input type="text" name="opdracht_type" style="width: 100%";/> <br>
-                    Type: <br> <input type="text" name="opdracht_beschrijving" style="width: 100%";/> <br>
-                    Leereenheden: 
-                    <select style="width: 100%"> 
-                        <?php
-                        foreach ($leereenheden as $Leereenheid) {
-                            /* Toon alle leereenheden */
-                            echo "<option name='opdracht_leereenheden'>";
-                            echo $Leereenheid->naam;
-                            echo "</option>";
-                        } ?>
-                    </select>
-
-                    <input type="Submit" value = "Opdracht Toevoegen" style="width: 100%; margin-top: 15px;";/></form></div>
                 </div>
             </div>
+        </div>
 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <span class="close" style="margin-top: 15px;">x</span>
+                    <h2 style="margin-top: 15px; margin-bottom: 15px;">Opdracht Toevoegen</h2>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+            <form action="opdrachten/toevoegen" method="post" id="opdrachttoevoegenform">
+                <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+
+                    <!-- Titel -->
+                    <div style="float:left; width: 48%;">
+                        <label for="opdracht_titel">Titel</label>
+                        <input type="text" name="opdracht_titel" class="form-control"; required>
+                    </div>
+
+                     <!-- Type --> 
+                    <div style="float:right; width: 48%;">
+                        <label for="opdracht_type">Type</label>
+                        <select name="opdracht_type" class="form-control" required> 
+                        <option>Individueel</option>
+                        <option>Intern</option>
+                        <option>Extern</option>
+                        </select>
+                    </div> <br><br><br><br>
+
+                    <!-- Beschrijving -->
+                    <label for="opdracht_beschrijving">Beschrijving</label>
+                    <textarea name="opdracht_beschrijving" class="form-control" rows=2 cols=20 style="width: 100%; max-width: 100%; height: 110px;"></textarea> <br>
+
+                    <!-- Leereenheden -->
+                     <!-- Beschikbare Leereenheden -->
+                    <div class="col-md-2" style="width: 45%; padding: 0px;">
+                    <label for="select1">Beschikbare Leereenheden</label>
+                        <select id="select1" name="selectmultiple" class="form-control" multiple="multiple">
+                            <?php
+                                foreach ($leereenheden as $Leereenheid) {
+                                    /* Toon alle leereenheden */
+                                    echo "<option name='opdracht_leereenheden'>";
+                                    echo $Leereenheid->naam;
+                                    echo "</option>"; } 
+                            ?>
+                        </select>
+                    </div>
+
+                    <!-- Knoppen voor het verplaatsen van leereenheden tussen de multiselects -->
+                    <ul style="list-style-type:none; float: left; padding: 0px; margin: 0px; margin-left: 13px;">
+                        <li><button class="button fa fa-angle-double-right" href="#" id="add" style="margin: 0px; padding-right: 25px; padding-top: 8px; padding-bottom: 8px; margin-bottom: 10px; font-size: 20px;     margin-top: 27px;"></button> </li>
+                        <li><button class="button fa fa-angle-double-left" href="#" id="remove" style="margin: 0px; padding-right: 25px; padding-top: 8px; padding-bottom: 8px; font-size: 20px;"></button></li>
+                    </ul>
+
+                    <!-- Geselecteerde Leereenheden -->
+                    <div class="col-md-2" style="width: 45%; float: left; padding: 0px;">
+                    <label for="select2">Geselecteerde Leereenheden</label>
+                        <select id="select2" name="opdracht_leereenheden" class="form-control" multiple="multiple" required>
+                        </select>
+                    </div> <br><br><br><br><br><br>
+
+                    <!-- Deadline -->        
+                    <div style="float:right; width: 48%;">
+                        <label for="deadline">Deadline</label>
+                        <input type="date" name="opdracht_deadline" class="form-control" required/>
+                    </div>
+
+                    <!-- Individuele of Groeps opdracht -->
+                    <label for="individueel">Individuele of groeps opdracht</label> <br>
+                    <!-- Individueel -->
+                    <label for="individueel" style="margin-top: 1%; margin-right: 5%;">Individueel
+                        <input type="radio" id="individueel" name="individueelgroepselect" value="Individueel" checked />
+                    </label>
+
+                    <!-- Groep -->
+                    <label for="groep">Groep
+                        <input type="radio" id="groep" name="individueelgroepselect" value="Groep" />
+                    </label>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <!-- Sluiten en Opslaan -->
+                <input class="button" type="reset" id="annuleer" value = "Annuleren" style="float:left; text-align: center; cursor: pointer;" />
+                <input class="button" type="Submit" value = "Opslaan" style="float: right;" />
+        </form>
     </div>
+
+<!-- Javascript src -->
+<script src="js/app.js"></script> 
+
+
+
+
+<!-- Sluit Container -->
 </div>
 
 @endsection
