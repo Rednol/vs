@@ -27,7 +27,9 @@ $leereenheden = App\Leereenheid::all();
 <!-- Kolom header met leereenheden toevoegen knop -->
 <div class="panel panel-default col-md-9">
   <div class="panel-body" style="float:left;">Leereenheden</div>
-    <a href="#" class="btn btn-default btn-primary" id="myBtn" style="float: right; margin-top: 7px;">Leereenheid Toevoegen</a>
+    <a href="#" class="btn btn-default btn-primary" id="myBtn" style="float: right; margin-top: 7px;">Toevoegen</a>
+    
+
 </div>
 
     <!--Leereenheden Kolom  -->
@@ -37,7 +39,7 @@ $leereenheden = App\Leereenheid::all();
             <?php
               foreach ($leereenheden as $leereenheid) {
               echo "<div class='col-md-12 well'>";
-              echo "<a class='leer' onclick='showDiv()'>$leereenheid->Naam </a>";
+              echo "<a class='leer' onclick='showDiv()'>$leereenheid->Naam </a><a href='/vs/resources/assets/$leereenheid->Naam.pdf'><i style='float:right' class='fa fa-external-link'></i></a>";
               echo "</div>";
              } ?>
         </div>
@@ -74,7 +76,7 @@ $leereenheden = App\Leereenheid::all();
                           <option value="Niveau 3">Niveau 3</option>
                           <option value="Niveau 4">Niveau 4</option>
                           </select>  
-                        <br>           
+                        <br>                    
       </div>
           <div class="modal-footer">
           <input class="button" type="Reset" id="annuleer" value = "Annuleren" style="float:left; text-align: center; cursor: pointer;" />
@@ -83,19 +85,23 @@ $leereenheden = App\Leereenheid::all();
         </div>
       </div>
     </div>
+
 </div>
         <!-- PDF Preview Kolom -->
         <div class="panel panel-default col-md-3">
             <div class="panel-heading">Preview</div>
                 <div class="panel-body" style="padding: 1px;"></div>
                  <?php
-if (!empty($leereenheid))
-      echo "<object id='welcomeDiv' style='display:none' width='270' height='300' data='/vs/resources/assets/$leereenheid->Naam.pdf'></object>";?>
+foreach ($leereenheden as $leereenheid){
+      echo "<object id='welcomeDiv' style='display:none' width='270' height='300' data='/vs/resources/assets/$leereenheid->Naam.pdf'></object>";
+
+    }?>
                  
         </div>
   </div>               
 </div>
 
 <script type="text/javascript" src="js/popup.js"></script>
+
 
 @endsection
