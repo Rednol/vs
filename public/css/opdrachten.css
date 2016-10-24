@@ -1,0 +1,34 @@
+/* CSS voor elementen die alleen op de opdrachten pagina zitten */
+
+/* Panel body div met leereenheden */
+.leereenhedendiv {
+	display: none;
+}
+/* Panel body div met opdrachten */
+.opdrachtendiv {
+	display: none;
+}
+
+/* Panel body div met opdracht details */
+.opdrachtdetails {
+	display: none;
+}
+
+/* Div om de radio buttons voor het selecteren of een opdracht individueel of in een groep wordt gedaan.
+   Deze radio buttons aleen tonen als er voor het type intern of extern wordt gekozen. 
+   Standaard staat het type op individueel dus hoeven de radio buttons niet getoond te wroden */
+#indiviudeelofgroepsopdrachtdiv {
+	display: none;
+}
+
+
+#uitnodigen_feedback{
+	display: block;
+}
+#uitnodigen_beoordeling{
+	display: none;
+}
+#uitnodigen_groepsopdracht{
+	display: block;
+}
+
