@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin', 'AdminController@index');
+Route::post('admin', 'AdminController@store');
+//Route::post('admin', 'AdminController@validator');
+//Route::post('add_user', 'AdminController@add');
