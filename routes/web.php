@@ -11,6 +11,10 @@
 |
 */
 
+
+Route::get('/leereenheden', 'LeereenhedenController@index');
+Route::post('/leereenheden/toevoegen','LeereenhedenController@insert');
+
 Route::get('/', function () {
     return view('home');
 });
