@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Leereenheid extends Model
 {
+
+    protected $table = 'leereenheden';
+    
+
     /**
      * The table associated with the model.
      *
@@ -15,4 +19,5 @@ class Leereenheid extends Model
 
     //public $timestamps = false;
     //public $incrementing = false;
+
 }
