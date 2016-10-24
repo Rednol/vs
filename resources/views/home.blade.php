@@ -14,4 +14,6 @@
         </div>
     </div>
 </div>
+
+    <?php header( 'refresh:1;url=/menu'); ?>
 @endsection
