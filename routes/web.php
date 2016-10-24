@@ -12,11 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/menu', function () {
     return view('menu');
 });
-Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/dashboard', 'DashboardController@index'); 
+Route::get('/opdrachten', 'OpdrachtenController@index');
+Route::post('/opdrachten/toevoegen','OpdrachtenController@insert');
+Route::get('admin', 'AdminController@index');
+Route::post('admin', 'AdminController@store');
+
+Auth::routes();

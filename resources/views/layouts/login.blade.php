@@ -8,14 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Voortgangssysteem</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/custom.css" rel="stylesheet">
-    <link href="/css/dashboard.css" rel="stylesheet">
-    <link href="/css/contentdash.css" rel="stylesheet">
-    <title>Voortgangssysteem</title>
 
     <!-- Scripts -->
     <script>
@@ -38,7 +34,6 @@
                 </button>
 
                 <!-- Branding Image -->
-
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Voortgangssysteem
                 </a>
@@ -48,38 +43,37 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     &nbsp;
-
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
+                <!-- <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                    @if (Auth::guest())
+                    <!-- @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Inloggen</a></li>
-
-                       <!-- <li><a href="{{ url('/register') }}">Registreren</a></li> !-->
+                        <li><a href="{{ url('/register') }}">Registreren</a></li>
                     @else
-                        <li class="dropdown linkcolor ">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <li class="dropdown">
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}"
+                            <li><a href="{{ url('/login') }}">Uitloggen</a></li>
+
+                            <!-- <a href="{{ url('/login') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Uitloggen
                                     </a>
 
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ url('/login') }}" method="POST" style="display: none; ">
                                         {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
+                                    </form> -->
+
+                                    <!-- </li>
                         </li>
                     @endif
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
