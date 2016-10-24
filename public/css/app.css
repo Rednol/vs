@@ -7,10 +7,6 @@
 
 /* The Modal (background) */
 
-test{
-
-}
-
 /* Button */
 .button {
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -38,7 +34,7 @@ test{
 /* Custom Div's */
 .customdiv {
 	padding: 15px;
-    margin-top: 10;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
@@ -106,7 +102,7 @@ hr {
 
 /* EINDE DROPDOWN */
 
-/* BEGIN POPUP */ 
+/* BEGIN POPUP */
 
 /* Popup achtergrond */
 
@@ -144,10 +140,11 @@ hr {
     animation-duration: 0.4s
 }
 
-/* Add Animation */
-
+/* Add Animation
+??
     animation-duration: 1.0s
 }
+*/
 
 /* Animatie */
 
@@ -274,4 +271,3 @@ a:hover.tooltips span {
 }
 
 /* EINDE POPUP */
-
