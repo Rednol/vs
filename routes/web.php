@@ -14,3 +14,11 @@
 
 Route::get('/leereenheden', 'LeereenhedenController@index');
 Route::post('/leereenheden/toevoegen','LeereenhedenController@insert');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('admin', 'AdminController@index');
+Route::post('admin', 'AdminController@store');
+
