@@ -5,22 +5,28 @@ $(function () {
         $(this).addClass('active');
 
         if (this.id == "student") {
-            $('.student').css("display", "block");
+            $('#fstudent').css("display", "block");
         } else {
-            $('.student').css("display", "none");
+            $('#fstudent').css("display", "none");
         }
 
         if (this.id == "docent") {
-            $('.docent').css("display", "block");
+            $('#fdocent').css("display", "block");
         } else {
-            $('.docent').css("display", "none");
+            $('#fdocent').css("display", "none");
         }
 
         if (this.id == "coach") {
-            $('.coach').css("display", "block");
+            $('#fcoach').css("display", "block");
         } else {
-            $('.coach').css("display", "none");
+            $('#fcoach').css("display", "none");
         }
 
     });
+
+    $("form").each(function(){
+        $("input").addClass('field');
+    });
+
+
 });
