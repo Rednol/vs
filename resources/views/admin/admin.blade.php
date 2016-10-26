@@ -32,24 +32,23 @@
         {{ Form::open(['action' => 'AdminController@store', 'method' => 'POST']) }}
 
         <p>
-            {{ Form::label('fname', 'Voornaam') }}
+            {{ Form::label('name', 'Voornaam') }}
             {{ Form::text('fname', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3)) }}
         </p>
 
         <p>
-            {{ Form::label('lname', 'Achternaam') }}
+            {{ Form::label('lastname', 'Achternaam') }}
             {{ Form::text('lname', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3)) }}
         </p>
 
         <p>
-
-            {{ Form::label('email', 'Student email') }}
-            {{ Form::email('email', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3) . '@email.com') }}
+            {{ Form::label('studentnumber', 'Student nummer') }}
+            {{ Form::number('snumber', substr(str_shuffle(str_repeat("0123456789", 5)), 0, 6)) }}
         </p>
 
         <p>
-            {{ Form::label('snumber', 'Student nummer') }}
-            {{ Form::number('snumber', substr(str_shuffle(str_repeat("0123456789", 5)), 0, 6)) }}
+            {{ Form::label('studentemail', 'Student email') }}
+            {{ Form::email('email', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3) . '@email.com') }}
         </p>
 
         <p>
@@ -63,17 +62,17 @@
     <div id="fdocent">
         {{ Form::open(['action' => 'AdminController@store', 'method' => 'POST']) }}
         <p>
-            {{ Form::label('fname', 'Voornaam') }}
+            {{ Form::label('name', 'Voornaam') }}
             {{ Form::text('fname', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3)) }}
         </p>
 
         <p>
-            {{ Form::label('lname', 'Achternaam') }}
+            {{ Form::label('lastname', 'Achternaam') }}
             {{ Form::text('lname', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3)) }}
         </p>
 
         <p>
-            {{ Form::label('email', 'Docent email') }}
+            {{ Form::label('studentemail', 'Docent email') }}
             {{ Form::email('email', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3) . '@email.com') }}
         </p>
 
@@ -88,17 +87,17 @@
     <div id="fcoach">
         {{ Form::open(['action' => 'AdminController@store', 'method' => 'POST']) }}
         <p>
-            {{ Form::label('fname', 'Voornaam') }}
+            {{ Form::label('name', 'Voornaam') }}
             {{ Form::text('fname', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3)) }}
         </p>
 
         <p>
-            {{ Form::label('lname', 'Achternaam') }}
+            {{ Form::label('lastname', 'Achternaam') }}
             {{ Form::text('lname', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3)) }}
         </p>
 
         <p>
-            {{ Form::label('email', 'Coach email') }}
+            {{ Form::label('studentemail', 'Coach email') }}
             {{ Form::email('email', substr(str_shuffle(str_repeat("abcdefghijklmnopqrstuvwxyz", 5)), 0, 3) . '@email.com') }}
         </p>
 
