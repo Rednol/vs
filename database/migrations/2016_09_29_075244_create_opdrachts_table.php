@@ -13,9 +13,18 @@ class CreateOpdrachtsTable extends Migration
      */
     public function up()
     {
-        Schema::create('opdrachts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('opdrachten', function (Blueprint $table) {
+            $table->increments('opdracht_id');
+            $table->timestamps('leerling_id');
+            $table->timestamps('titel');
+            $table->timestamps('type');
+            $table->timestamps('beschrijving');
+            $table->timestamps('status');
+            $table->timestamps('deadline');
+            $table->timestamps('individueelofgroepsopdracht');
+
+
+
         });
     }
 
@@ -26,6 +35,6 @@ class CreateOpdrachtsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opdrachts');
+        Schema::dropIfExists('opdrachten');
     }
 }
