@@ -45,7 +45,7 @@ $leereenheden= App\Leereenheid::all();
                     <?php
                         foreach ($leereenheden as $Leereenheid) {
                             echo "<div class='col-md-12 well clickable customdiv leereenheid'>";
-                            echo $Leereenheid->leereenheid_naam;
+                            echo $Leereenheid->Naam;
                             echo "</div>"; }
                     ?>
                 </div>

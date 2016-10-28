@@ -15,7 +15,8 @@ Route::get('/', function () {
 });
 
 */
-
+Route::get('/leereenheden', 'LeereenhedenController@index');
+Route::post('/leereenheden/toevoegen','LeereenhedenController@insert');
 Route::get('/', 'DashboardController@index');
 Route::get('/dashboard', 'DashboardController@index'); 
 Route::get('/opdrachten', 'OpdrachtenController@index');

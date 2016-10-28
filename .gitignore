@@ -9,3 +9,14 @@ app/Http/Controllers/DashboardController.php
 app/Http/Controllers/DashboardController.php
 app/Http/Controllers/DashboardController.php
 vs.sql
+routes/web.php
+resources/views/leereenheden.blade.php
+public/css/leereenheden.css
+composer.json
+composer.lock
+resources/assets/MGIDEVBT1.pdf
+app/Http/Controllers/LeereenhedenController.php
+composer.lock
+*.json
+composer.json
+resources/views/opdrachten.blade.php
